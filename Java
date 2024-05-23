@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Aufgabe23{
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        do {
+            System.out.println("Geben Sie den Text ein:");
+            String inputText = scanner.nextLine();
+
+            System.out.println("Geben Sie das zu suchende Wort ein:");
+            String searchTerm = scanner.nextLine();
+
+            // Die Position des ersten Vorkommens des gesuchten Wortes im Text suchen
+            int position = searchText(inputText, searchTerm);
+
+            // Ausgabe des Wortes mit dessen erster Position
+            System.out.println(searchTerm + " steht auf der Position " + position);
+
+            // Wiederholung
+            System.out.println("Wollen Sie nochmal(J/N): ");
+        } while (scanner.nextLine().equalsIgnoreCase("J"));
+
+        scanner.close();
+    }
+
+    static int searchText(String text, String word) {
+        int position = text.indexOf(word);
+        return position;
+    }
+}
